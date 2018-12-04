@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>css3</title>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <script src="js/iconfont.js"></script>
+    <style type="text/css">
+    /*自定义字体*/
+    @font-face {
+        font-family: my-font;
+        src: url(fonts/ColabThi-webfont.ttf),
+            url(fonts/ColabThi-webfont.eot),
+            url(fonts/ColabThi-webfont.svg),
+            url(fonts/ColabThi-webfont.woff);
+    }
+
+    @font-face {
+        font-family: my-font2;
+        src: url(fonts/Vera-webfont.ttf),
+            url(fonts/Vera-webfont.eot);
+    }
+
+    h1 {
+        font-family: my-font;
+    }
+
+    h2 {
+        font-family: my-font2;
+    }
+
+    /*阴影*/
+    /*盒子阴影 box-shadow 水平 垂直 模糊距离 阴影尺寸 颜色 位置*/
+    .box {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        box-shadow: 0px 0px 20px purple;
+    }
+
+    /*文字阴影 text-shadow 水平 垂直 模糊距离 颜色*/
+    .title {
+        color: #fff;
+        text-shadow: 0px 0px 2px blue;
+    }
+
+    /*浏览器厂商前缀 -webkit-chrome、safari -o-opera -moz-firefox -ms-ie*/
+    /*word-break: break-all*/
+    .boxx {
+        width: 200px;
+        height: 200px;
+        background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+    }
+
+    /*透明 颜色透明 rgba（0,0,0,透明度）opacity:0.6可以控制所有内容 全部透明*/
+    /*消失 opacity:0 display:none*/
+
+    /*字体图标 下载代码 打开说明页*/
+    .iconfont {
+        font-size: 30px;
+        color: purple;
+    }
+
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        font-size: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">hello world</h1>
+    <h2>hello world</h2>
+    <div class="box"></div>
+    <div class="boxx"></div>
+    <i class="iconfont icon-xie"></i>
+    <i class="iconfont icon-yuyin"></i>
+    <i class="iconfont icon-jinnang"></i>
+    <i class="iconfont icon-shipin"></i>
+    <i class="iconfont icon-richeng"></i>
+    <i class="iconfont icon-qiaquan"></i>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-xie"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-yuyin"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-jinnang"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-shipin"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-richeng"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-qiaquan"></use>
+    </svg>
+</body>
+
+</html>

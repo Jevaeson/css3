@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>transform</title>
+        <style type="text/css">
+          .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*转换只能在块元素中实现*/
+            /*旋转和缩放*/
+            transform:rotate(45deg) scale(0.5);
+            box-shadow: 0px 0px 10px blue;
+            transition: transform 2s;
+          }
+          .box:hover{
+            /*位移*/
+            transform:translate(200px, 200px);
+          }
+          .boxx{
+            width: 10px;
+            height: 400px;
+            background-color: blue;
+            transform:rotate(30deg);
+            /*中心点*/
+            transform-origin: 5px 400px;
+          }
+        </style>
+    </head>
+    <body>
+      <!-- css3转换 -->
+      <div class="box"></div>
+      <div class="boxx"></div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+        <style type="text/css">
+          .box{
+            width: 200px;
+            height: 200px;
+            background-image: url( images/eyes.jpeg);
+            -webkit-background-size: 200px;
+            background-size: 200px;
+            /*过渡 transition 监听的样式名(all代表所有变化的样式) 持续时间 速度曲线 延迟时间*/
+            transition: transform 2s linear 1s;
+          }
+          .box:hover{
+            transform:scale(1.5) rotate(180deg);
+          }
+          .box1{
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            position: relative;
+          }
+          .box2{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            /*根据自身的尺寸*/
+          }
+
+
+          /*10.11 动画 动画名 持续时间 速度曲线 延迟 演示次数 偶数次数是否逆向播放（alternate) 是否停留在最后一帧（forwards）*/
+          /*自定义动画 只支持带数值的样式变化*/
+          .box3{
+            width: 200px;
+            height: 200px;
+            background-image: url( images/run.png);
+            animation:jump 2s linear 0s infinite;
+          }
+          @keyframes jump{
+            /*from{transform: translateX(0px);}
+            to{transform: translate(100px);}*/
+            0%{transform: translate(0px,0px);}
+            20%{transform: translate(100px,0px);}
+            40%{transform: translate(100px,100px);}
+            80%{transform: translate(0px,100px);}
+            100%{transform: translate(0px,0px);}
+          }
+        </style>
+    </head>
+    <body>
+      <div class="box"></div>
+      <div class="box1">
+          <div class="box2">
+          </div>
+      </div>
+      <div class="box3"></div>
+    </body>
+</html>

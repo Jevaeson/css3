@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>transition</title>
+    <link rel="stylesheet" type="text/css" href="./css/heart iconfont.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .clearfix {
+        *+height: 1%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .showpic {
+        width: 350px;
+        height: 400px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+
+    .showpic .shou-wrap {
+        width: 350px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        z-index: 3;
+
+    }
+
+    .showpic img {
+        width: 100%;
+        transform: scale(1.4);
+        transition: all 0.5s;
+    }
+
+    .showpic:hover img {
+        transform: scale(1.3);
+    }
+
+    .showpic .words {
+        position: absolute;
+        z-index: 5;
+        transform: translate(25%, -40%);
+        transition: all 0.5s;
+        text-align: center;
+    }
+
+    .showpic .words p {
+        color: #ccc;
+        font-size: 12px;
+        margin-bottom: 15px;
+        transition: all 0.5s;
+    }
+
+    .showpic .words p:nth-child(2) {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .showpic .words p:nth-child(4) span {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+    }
+
+    .showpic:hover .words {
+        transform: translate(25%, -70%);
+    }
+
+    .showpic:hover .words p:nth-child(2) {
+        color: #3bb18f;
+    }
+
+    nav>ul {
+        width: 505px;
+        background-color: #3c3f48;
+        border-radius: 10px;
+        margin-left: 20px;
+        /*float: left;*/
+        /*不写宽 用浮动适应内容的长度*/
+    }
+
+    nav>ul>li {
+        padding: 6px 0px;
+        float: left;
+        position:relative;
+    }
+    nav>ul>li>a {
+        display: block;
+        color: #fff;
+        padding: 0px 12px;
+        font-size: 14px;
+        line-height: 28px;
+        border-right: 1px solid #505058;
+        border-left: 1px solid #393943;
+    }
+
+    nav>ul>li:first-child>a{
+        border-left: none;
+    }
+
+    nav>ul>li:last-child>a {
+        border-right: none;
+    }
+
+    nav>ul>li ul{
+        position:absolute;
+        top: 40px;
+        left:0px;
+        background-color: #111;
+        border-bottom-right-radius:5px;
+        border-bottom-left-radius:5px;
+        opacity: 0;
+        overflow:hidden;
+        transition: opacity 0.5s;
+    }
+    nav>ul>li:hover ul{
+        opacity: 1;
+    }
+    nav>ul>li ul li{
+        border-bottom: 1px solid #505058;
+        line-height: 40px;
+        height: 0;
+        overflow:hidden;
+        transition: height 0.5s;
+    }
+     nav>ul>li:hover ul li{
+        height: 40px;
+    }
+    nav>ul>li ul li:last-child{
+        border:none;
+    }
+    nav>ul>li ul li a{
+        display: block;
+        color: #fff;
+        padding: 0px 28px;
+        /*a一般不加上下的内边距*/
+        font-size: 14px;
+    }
+    /*心*/
+    @keyframes big{
+    0% {transform: scale(0.1);}
+    100% {transform: scale(1);}
+}
+    @keyframes bigger{
+    0% {transform: scale(0.1);}
+    100% {transform: scale(1.5);}
+}
+    @keyframes move{
+    0% {transform: translateY(30px);}
+    100% {transform: translateY(0px);}
+}
+    .box{
+        width: 200px;
+        height: 300px;
+        background-color: #fff;
+        border:1px solid #ccc;
+        margin-left: 20px;
+        margin-top: 40px;
+        transition:all 0.5s;
+        overflow:hidden;
+    }
+    .box:hover{
+        background-color: #000;
+        transform:scale(1.1);
+        border:1px solid #000;
+
+    }
+    .box img{
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin:0 auto;
+        margin-top: 40px;
+    }
+    .box:hover img{
+        animation: bigger 900ms alternate infinite ease;
+    }
+    .box h2{
+        font-size: 30px;
+        opacity: 0.8;
+        text-align: center;
+        font-family: Arial;
+        font-weight: normal;
+        margin-top: 40px;
+        transition:all 300ms;
+    }
+    .box:hover h2{
+        animation: big 300ms ease;
+        color:#ccff00;
+    }
+    .box h3{
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        font-family: Arial;
+        font-weight: normal;
+        margin-top: 65px;
+        transition:all 500ms;
+    }
+    .box:hover h3{
+        animation: move 500ms ease;
+        color:#ccff00;
+    }
+    .box i{
+        display: block;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 40px;
+        color:black;
+        transition:all 5000ms;
+    }
+    .box:hover i{
+        animation: bigger 900ms alternate infinite ease;
+        color:red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="showpic">
+        <div class="shou-wrap"></div>
+        <img src="images/img2.jpg" alt="" />
+        <div class="words">
+            <p>design</p>
+            <p>How to Design with Colors</p>
+            <p>By,DAN SHAW . MAY 31,2017</p>
+            <p><span>READ MORE</span></p>
+        </div>
+    </div>
+    <nav>
+        <ul class="clearfix">
+            <li><a href="#">My dashborad</a></li>
+            <li><a href="#">Likes</a></li>
+            <li>
+            <a href="#">Views</a>
+            <ul>
+                <li><a href="">Documents</a></li>
+                <li><a href="">Messages</a></li>
+                <li><a href="">Sign Out</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Uploads</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Documents</a></li>
+        </ul>
+    </nav>
+    <div class="box">
+        <img src="images/h.png" alt="" />
+        <h2>Infographical Education</h2>
+        <h3>Infographical Education</h3>
+    </div>
+    <div class="box">
+        <i class="iconfont icon-xin"></i>
+        <h2>Infographical Education</h2>
+        <h3>Infographical Education</h3>
+    </div>
+</body>
+
+</html>
